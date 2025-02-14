@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: user-manager
+  datasource:
+    url: jdbc:mysql://${db_host}:${db_port}/${db_name}
+    username: ${db_user}
+    password: ${db_password}
+  jpa:
+    hibernate:
+      ddl-auto: update
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+server:
+  port: 8080
